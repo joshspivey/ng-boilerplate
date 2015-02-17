@@ -1,0 +1,20 @@
+<div id="addNewContainer">
+	<form name="addForm" ng-submit="submitForm(addForm)" novalidate>
+
+		<div class="inputContainer" ng-class="{ 'has-error' : (addForm.Name.$invalid || addForm.Name.$dirty) && submitted}">
+		  <label for="Name">Name:</label>
+		  <input type="text" name="Name" ng-model="addData.Name" required />
+		  <p ng-show="addForm.Name.$invalid && submitted " class="help-block">Name invalid</p>
+		</div>
+
+		<div class="inputContainer" ng-class="{ 'has-error' : (addForm.Keyword.$invalid || addForm.Keyword.$pristine) && submitted }">
+		  <label for="Keyword">Keyword:</label>
+		  <input type="text" ng-model="addData.Keyword" name="Keyword" required />
+		  <p ng-show="addForm.Keyword.$invalid && submitted " class="help-block">Keyword invalid</p>
+		</div>
+
+		<div id="addBtn" ng-click="addAction(addForm);">
+			Add New
+		</div>
+	</form>
+</div>
